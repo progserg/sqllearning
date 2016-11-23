@@ -1,0 +1,20 @@
+<div class="block">
+    {% for friend in friends %}
+        <div class="row">
+            <p class="friend float-block">
+                {{ friend.name }}
+            </p>
+            <form action="index.php?name=;id=;action=" method="get" class="float-block">
+                <input type="text" name="name" placeholder="Введите новое имя">
+                <input type="hidden" name="id" value="{{ friend.id }}">
+                <input type="hidden" name="action" value="change">
+                <input type="submit" value="Изменить имя">
+            </form>
+            <form action="index.php?id=;action=" method="get" class="float-block">
+                <input type="hidden" name="id" value="{{ friend.id }}">
+                <input type="hidden" name="action" value="delete">
+                <input type="submit" value="Удалить друга">
+            </form>
+        </div>
+    {% endfor %}
+</div>
